@@ -2,3 +2,5 @@ azure-identity
 azure-ai-projects~=2.0.0b1
 jsonref
 python-dotenv
+fastapi
+uvicorn
