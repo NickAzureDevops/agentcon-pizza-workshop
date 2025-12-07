@@ -12,7 +12,3 @@ class PizzaRequest(BaseModel):
 def calculate_pizza(req: PizzaRequest):
     result = calculate_pizza_for_people(req.people_count, req.appetite_level)
     return {"recommendation": result}
-@app.post("/calculate_pizza")
-def calculate_pizza(req: PizzaRequest):
-    result = calculate_pizza_for_people(req.people_count, req.appetite_level)
-    return {"recommendation": result}
