@@ -1,14 +1,11 @@
-def calculate_pizza_for_people(people_count: int, appetite_level: str = "normal") -> str:
-    """
-    Calculate the number and size of pizzas needed for a group of people.
-    
-    Args:
-        people_count (int): Number of people who will be eating
-        appetite_level (str): Appetite level - "light", "normal", or "heavy" (default: "normal")
-    
-    Returns:
-        str: Recommendation for pizza size and quantity
-    """
+from typing import Annotated
+from pydantic import Field
+
+def calculate_pizza_for_people(
+    people_count: Annotated[int, Field(description="Number of people who will be eating")],
+    appetite_level: Annotated[str, Field(description="Appetite level - 'light', 'normal', or 'heavy'")] = "normal"
+) -> str:
+    """Calculate the number and size of pizzas needed for a group of people."""
     if people_count <= 0:
         return "Please provide a valid number of people (greater than 0)."
     
